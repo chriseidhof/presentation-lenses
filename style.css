@@ -1,0 +1,10 @@
+h2, h3 {
+  color: blue;
+  text-align: left;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+pre.sh_haskell {
+  background: green;
+}

@@ -11,7 +11,6 @@ look at the `User` datatype, which has a nested field `address` of type
 
 Here is an example `User` value
 
->
 > chris :: User
 > chris = User "Chris" (Address "Vader Rijndreef" "Utrecht") "test"
 
@@ -65,7 +64,8 @@ Now we would like a way to compose `city_` and `address_`, for example:
 > userCity = address_ `compose` city_
 
 > compose :: Lens a b -> Lens b c -> Lens a c
-> compose l1 l2 = Lens (get l2 . get l1) (\x y -> set l1 x (set l2 (get l1 x) y))
+> compose l1 l2 = Lens (get l2 . get l1) 
+>  (\x -> set l1 x . (set l2 $ get l1 x))
 
 Now, let's try to see if this works:
 

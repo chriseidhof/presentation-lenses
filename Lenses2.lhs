@@ -84,7 +84,7 @@ Suppose the user now updates this value
 We can update our original value to reflect the changes in the `FlatUser`:
 
 > chrisInBerlin' :: User
-> chrisInBerlin' = set toFlatUser (flatChris { flatCity = "Berlin"}) chris
+> chrisInBerlin' = set toFlatUser flatChrisInBerlin chris
 
 This is a great way of building your API. Your "Flat" datatype is what you
 present publicly, and internally you can refactor and be very flexible about
